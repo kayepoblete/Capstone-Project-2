@@ -7,15 +7,19 @@ import { nationalParksArray } from "./nationalParkData.js"
 let filterSelect = "";
 // On page load
 window.onload = () => {
-    // Options to search by: location or park type
     const filterSearchBy = ["Location", "Park Type"];
+    const filterSearchByList = document.querySelector("#filterSearchBy");
+    const searchTypeList = document.querySelector("#searchTypeList");
+    const divParksList = document.querySelector("#divParksList");
+    // Options to search by: location or park type
     createNewDropdown(filterSearchBy, "#filterSearchBy");
     // On change of filter, perform function
-    const filterSearchByList = document.querySelector("#filterSearchBy");
     filterSearchByList.onchange = onChangeFilterSearchBy;
     // On change of search type, perform function
-    const searchTypeList = document.querySelector("#searchTypeList");
     searchTypeList.onchange = onChangeSearchTypeList;
+    // Inititally hide these select elements
+    hideElement(searchTypeList);
+    hideElement(divParksList);
 }
 // Create a new dropdown list
 const createNewDropdown = (_myArrayList, _nameOfDropdown) => {
@@ -28,14 +32,18 @@ const createNewDropdown = (_myArrayList, _nameOfDropdown) => {
 }
 // When filter option is chosen, populate an option list for each
 const onChangeFilterSearchBy = () => {
+    const labelSearchTypeList = document.querySelector("#labelSearchTypeList");
     const index = document.querySelector("#filterSearchBy").selectedIndex;
     const selectedFilterText = document.querySelector("#filterSearchBy")[index].text;
     document.querySelector("#searchTypeList").innerHTML = "";
+    showElement(searchTypeList);
     if(selectedFilterText === "Location"){
+        labelSearchTypeList.innerHTML = "Choose a state/territory:"
         createNewDropdown(locationsArray, "#searchTypeList");
         filterSelect = "Location";
     }
-    else if( selectedFilterText === "Park Type"){
+    else if(selectedFilterText === "Park Type"){
+        labelSearchTypeList.innerHTML = "Choose a park type:"
         createNewDropdown(parkTypesArray, "#searchTypeList");
         filterSelect = "Park Type";
     }
@@ -46,6 +54,7 @@ const onChangeSearchTypeList = () => {
     const selectedCategoryText = document.querySelector("#searchTypeList")[index].text;
     document.querySelector("#parksList").innerHTML = "";
     let matching = [];
+    showElement(divParksList);
     nationalParksArray.filter( (element) => {
         if(filterSelect === "Location"){
             if(element.State === selectedCategoryText){
@@ -59,4 +68,12 @@ const onChangeSearchTypeList = () => {
         }
     })
     createNewDropdown(matching, "#parksList");
+}
+// 
+const hideElement = (element) => {
+    element.style.display = "none";
+}
+// 
+const showElement = (element) => {
+    element.style.display = "block";
 }

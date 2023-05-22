@@ -40,34 +40,26 @@
   <main>
     <div class="container">
       <h1>National Parks Search</h1>
-
+      <hr>
       <form action="">
-        <!-- Radio button, to select search by type
-        <input class="form-check-input" type="radio" name="searchtype" id="searchByLocation" value="byLocation">
-        <label class="form-check-label" for="searchByLocation">By Location</label>
-
-        <input class="form-check-input" type="radio" name="searchtype" id="searchByParkType" value="byParkType">
-        <label class="form-check-label" for="searchByParkType">By Park Type</label> -->
-        
         <!-- Dropdown lists -->
         <div class="container">
           <!-- By Location OR By Park Type -->
-          <select class="form-select" id="filterSearchBy">
-
-          </select>
+          <label for="filterSearchBy">Filter search by:</label>
+          <select class="form-select" id="filterSearchBy"></select>
           <!-- Populate a list depending on filter choice -->
-          <select class="form-select" id="searchTypeList">
-
-          </select>
+          <label for="searchTypeList" id="labelSearchTypeList"></label>
+          <select class="form-select" id="searchTypeList"></select>
           <!-- Populate a list that matches selection -->
-          <select class="form-select" id="parksList">
-
-          </select>
-        </div>
-        <div id="test">
-          test
+          <div id="divParksList">
+            <label for="parksList">Choose a park:</label>
+            <select class="form-select" id="parksList"></select>
+          </div>
         </div>
       </form>
+
+      <!-- Display info of each park -->
+      <div id="displayCard">test</div>
     </div>
   </main>
 
