@@ -2,6 +2,7 @@
 import { locationsArray } from "./locationData.js"
 import { parkTypesArray } from "./parkTypeData.js"
 import { nationalParksArray } from "./nationalParkData.js"
+import { mountainsArray } from "./mountainData.js"
 
 "use strict";
 
@@ -18,6 +19,8 @@ let filterSelect = "";
 window.onload = () => {
     // Options to search by: location or park type
     createNewDropdown(filterSearchBy, "#filterSearchBy");
+    // Mountain
+
     // On change of filter, perform function
     filterSearchByList.onchange = onChangeFilterSearchBy;
     // On change of search type, perform function
@@ -30,7 +33,7 @@ window.onload = () => {
 }
 
 // Create a new dropdown list
-const createNewDropdown = (_myArrayList, _nameOfDropdown) => {
+export const createNewDropdown = (_myArrayList, _nameOfDropdown) => {
     const newDropdown = document.querySelector(_nameOfDropdown);
     newDropdown.appendChild(new Option("Select one"));
     _myArrayList.forEach( (element) => {
@@ -42,23 +45,23 @@ const createNewDropdown = (_myArrayList, _nameOfDropdown) => {
 // When filter option is chosen, populate an option list for each
 const onChangeFilterSearchBy = () => {
     const index = filterSearchByList.selectedIndex;
-    const selectedFilterText = filterSearchByList[index].text;
+    const selectedText = filterSearchByList[index].text;
     searchTypeList.innerHTML = "";
     showElement(labelSearchTypeList);
     showElement(searchTypeList);
     hideElement(divParksList);
     hideElement(displayInfo);
-    if(selectedFilterText === "Location"){
+    if(selectedText === "Location"){
         labelSearchTypeList.innerHTML = "Choose a state/territory:"
         createNewDropdown(locationsArray, "#searchTypeList");
         filterSelect = "Location";
     }
-    else if(selectedFilterText === "Park Type"){
+    else if(selectedText === "Park Type"){
         labelSearchTypeList.innerHTML = "Choose a park type:"
         createNewDropdown(parkTypesArray, "#searchTypeList");
         filterSelect = "Park Type";
     }
-    else if(selectedFilterText === "Select one"){
+    else if(selectedText === "Select one"){
         hideElement(labelSearchTypeList);
         hideElement(searchTypeList);
     }
@@ -67,27 +70,27 @@ const onChangeFilterSearchBy = () => {
 // When selecting, generate a list based on search type
 const onChangeSearchTypeList = () => {
     const index = searchTypeList.selectedIndex;
-    const selectedCategoryText = searchTypeList[index].text;
+    const selectedText = searchTypeList[index].text;
     document.querySelector("#parksList").innerHTML = "";
     let matching = [];
     displayInfo.innerHTML = "";
     showElement(divParksList);
     nationalParksArray.filter( (element) => {
         if(filterSelect === "Location"){
-            if(element.State === selectedCategoryText){
+            if(element.State === selectedText){
                 matching.push(element.LocationName);
-                createCard(element);
+                createParkInfoCard(element);
             }
         }
         else if(filterSelect === "Park Type"){
-            if(element.LocationName.toLowerCase().includes(selectedCategoryText.toLowerCase())){
+            if(element.LocationName.toLowerCase().includes(selectedText.toLowerCase())){
                 matching.push(element.LocationName);
-                createCard(element);
+                createParkInfoCard(element);
             }
         }
     });
     createNewDropdown(matching, "#parksList");
-    if(selectedCategoryText === "Select one"){
+    if(selectedText === "Select one"){
         hideElement(divParksList);
     }
     showElement(displayInfo);
@@ -96,17 +99,17 @@ const onChangeSearchTypeList = () => {
 // When selecting a specific park, display only that park's information
 const onChangeParksList = () => {
     const index = parksList.selectedIndex;
-    const selectedCategoryText = parksList[index].text;
+    const selectedText = parksList[index].text;
     displayInfo.innerHTML = "";
     nationalParksArray.find( (element) => {
-        if(element.LocationName === selectedCategoryText){
-            createCard(element);
+        if(element.LocationName === selectedText){
+            createParkInfoCard(element);
         }
     });
 }
 
 // Create info card for each park
-const createCard = (_element) => {
+const createParkInfoCard = (_element) => {
     displayInfo.innerHTML += 
     `
     <div class="card mb-3">
@@ -118,6 +121,15 @@ const createCard = (_element) => {
     </div>
     `
 }
+
+// Mountain names
+// const getMountainNames = (_myArrayList) => {
+//     let matching = [];
+//     _myArrayList.forEach((element) => {
+//         matching.push(element.name);
+//     })
+//     return matching;
+// }
 
 // 
 const hideElement = (element) => {
