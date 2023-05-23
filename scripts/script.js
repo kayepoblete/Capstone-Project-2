@@ -5,6 +5,7 @@ import { nationalParksArray } from "./nationalParkData.js"
 
 "use strict";
 let filterSelect = "";
+const displayInfo = document.querySelector("#displayInfo");
 // On page load
 window.onload = () => {
     const filterSearchBy = ["Location", "Park Type"];
@@ -47,6 +48,7 @@ const onChangeFilterSearchBy = () => {
         createNewDropdown(parkTypesArray, "#searchTypeList");
         filterSelect = "Park Type";
     }
+    hideElement(divParksList);
 }
 // When selecting, generate a list based on search type
 const onChangeSearchTypeList = () => {
@@ -54,20 +56,33 @@ const onChangeSearchTypeList = () => {
     const selectedCategoryText = document.querySelector("#searchTypeList")[index].text;
     document.querySelector("#parksList").innerHTML = "";
     let matching = [];
+    displayInfo.innerHTML = "";
     showElement(divParksList);
     nationalParksArray.filter( (element) => {
         if(filterSelect === "Location"){
             if(element.State === selectedCategoryText){
                 matching.push(element.LocationName);
+                createCard(element);
             }
         }
         else if(filterSelect === "Park Type"){
-            if(element.LocationName.includes(selectedCategoryText)){
+            if(element.LocationName.toLowerCase().includes(selectedCategoryText.toLowerCase())){
                 matching.push(element.LocationName);
+                createCard(element);
             }
         }
-    })
+    });
     createNewDropdown(matching, "#parksList");
+}
+// Create card for each element in the array
+const createCard = (_element) => {
+    displayInfo.innerHTML += 
+    `
+    <h5>${_element.LocationName}</h5>
+    <span>(${_element.LocationID})</span>
+    <p>Address: ${_element.Address}, ${_element.City}, ${_element.State} ${_element.Zipcode}</p>
+    <p>Contact: ${_element.Phone} ${_element.Fax}</p>
+    `
 }
 // 
 const hideElement = (element) => {
