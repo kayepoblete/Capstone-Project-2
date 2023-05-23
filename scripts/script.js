@@ -19,8 +19,6 @@ let filterSelect = "";
 window.onload = () => {
     // Options to search by: location or park type
     createNewDropdown(filterSearchBy, "#filterSearchBy");
-    // Mountain
-
     // On change of filter, perform function
     filterSearchByList.onchange = onChangeFilterSearchBy;
     // On change of search type, perform function
@@ -122,21 +120,12 @@ const createParkInfoCard = (_element) => {
     `
 }
 
-// Mountain names
-// const getMountainNames = (_myArrayList) => {
-//     let matching = [];
-//     _myArrayList.forEach((element) => {
-//         matching.push(element.name);
-//     })
-//     return matching;
-// }
-
-// 
+// Hide element
 const hideElement = (element) => {
     element.style.display = "none";
 }
 
-// 
+// Show elemeent
 const showElement = (element) => {
     element.style.display = "block";
 }
