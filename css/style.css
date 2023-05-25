@@ -1,7 +1,39 @@
 /* Developed by Kaye Poblete */
+
+:root {
+    --color-primary:#2C6E49;
+    --color-secondary: #FFC9B9;
+    --color-tertiary: #8C4E02;
+    --color-light: #F6E7CB;
+    --color-dark: #000000;
+
+}
+
+body {
+    background-color: var(--color-light) !important;
+}
+ 
 h1 {
     text-align: center;
+    /* font-family: ; */
 }
+
+#btnViewAll {
+    background: none;
+    border: 2px solid;
+    font: inherit;
+    line-height: 0.5;
+    margin: 0.5em;
+    padding: 0.5em 1.5em;
+    color: var(--color-primary);
+    background-color: var(--color-secondary);
+}
+
+.flex-end {
+    display: flex;
+    justify-content: flex-end;
+}
+
 
 form {
     width: 50%;
