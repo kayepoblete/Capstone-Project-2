@@ -7,15 +7,87 @@
     --color-light: #F6E7CB;
     --color-dark: #000000;
 
+    --color-first: #301A48; /*Purple*/
+    --color-second: #F2D6C6; /*Beige*/
+    --color-third: #BC6D6D; /*Pink*/
+    --color-fourth: #C54506; /*Red orange*/
+    --color-fifth: #33566C; /*Blue*/
 }
 
 body {
-    background-color: var(--color-light) !important;
+    background-color: #F2D6C6 !important;
 }
- 
+
+nav {
+    background-color: #F2D6C6;
+    border-bottom: solid;
+    border-color: #301A48;
+    border-width: 1px;;
+}
+
+.navbar-brand {
+    width: 175px;
+  }
+  
+  .navbar-brand > img {
+    width: 100%;
+  }
+
+.navbar li a {
+    color: #C54506;
+    font-family: 'Josefin Sans', sans-serif;
+    font-size: 1.5vw;
+    margin-left: 15px;
+    margin-right: 15px;
+}
+
+.navbar .active{
+    color: #301A48 !important;
+    font-weight: bolder
+
+}
+
+nav li:hover {
+    border-bottom: solid;
+    border-color: #301A48;
+}
+
+#video-container {
+    height: 100vh;
+    width: auto;
+    position: relative;
+}
+
+#video-container video {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    object-fit: cover;
+    z-index: 0;
+}
+
+#video-container p {
+    position: absolute;
+    z-index: 1;
+    font-size: 50px;
+    color: white;
+    width:100%;
+    text-align:center
+
+  }
+
 h1 {
+    margin: 2rem 0 1rem 0 !important;
+    color: #301A48 !important;
     text-align: center;
-    /* font-family: ; */
+    font-family: Roboto Slab, serif;
+    font-size: 5vw !important;
+}
+
+h2 {
+    color: #C54506 !important;
+    text-align: center;
+    font-family: 'Josefin Sans', sans-serif;
 }
 
 #btnViewAll {
@@ -26,7 +98,12 @@ h1 {
     margin: 0.5em;
     padding: 0.5em 1.5em;
     color: var(--color-primary);
-    background-color: var(--color-secondary);
+    background-color: #F2D6C6;
+}
+
+#btnViewAll:hover {
+    color: white;
+    background-color: #2C6E49;
 }
 
 .flex-end {
@@ -55,7 +132,23 @@ form select {
     margin: 0 auto 25px;
 }
 
+#iconScroll {
+    font-size: 3rem;
+    color: #33566C;
+}
+
+#btnScrollToTop {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    display: none;
+}
+
 @media screen and (max-width:768px) {
+    .navbar li a {
+        font-size: 5vw;
+    }
+
     form {
         width: 75%;
         margin: 0 auto 25px;

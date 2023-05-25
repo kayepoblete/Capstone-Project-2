@@ -14,6 +14,7 @@ const divParksList = document.querySelector("#divParksList");
 const parksList = document.querySelector("#parksList");
 const displayParksInfo = document.querySelector("#displayParksInfo");
 const btnViewAll = document.querySelector("#btnViewAll");
+const btnScrollToTop = document.querySelector("#btnScrollToTop");
 let filterSelect = ""; //Where to store selected filter (Location or Park Type)
 
 window.onload = () => {
@@ -163,4 +164,17 @@ const showElement = (element) => {
 // Reset element
 const resetElement = (element) =>{
     element.innerHTML = "";
+}
+
+window.onscroll = function() {
+    scrollFunction();
+}
+
+const scrollFunction = () => {
+    if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+        btnScrollToTop.style.display = "block";
+    } 
+    else {
+        btnScrollToTop.style.display = "none";
+    }
 }

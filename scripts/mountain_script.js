@@ -43,8 +43,8 @@ const createMountainInfoCard = () => {
             </div>`;
             let p = document.querySelector("#displayMountainInfo .card .card-body");
             getSunsetForMountain(_obj.coords.lat, _obj.coords.lng).then(data => {
-                p.innerHTML += `<p><i class="bi bi-sunrise"></i> Sunrise: ${data.results.sunrise} UTC</p>`;
-                p.innerHTML += `<p><i class="bi bi-sunset-fill"></i> Sunset: ${data.results.sunset} UTC</p>`;
+                p.innerHTML += `<p><i class="bi bi-sunrise" id="iconSunrise"></i> Sunrise: ${data.results.sunrise} UTC</p>`;
+                p.innerHTML += `<p><i class="bi bi-sunset-fill" id="iconSunrset"></i> Sunset: ${data.results.sunset} UTC</p>`;
             });
         }
     })
