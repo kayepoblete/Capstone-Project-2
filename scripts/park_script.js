@@ -130,7 +130,7 @@ const createParkInfoCard = (_object) => {
     // let linkVisit = "";
     let add, zip, phone, fax, linkVisit = "";
     // Checks if Object has Visit property. Creates a button if true, else blank
-    _object.hasOwnProperty("Visit") ? linkVisit = `<button type="button" class="btn btn-primary" href="${_object.Visit}" target="_blank">Visit Here</button>` : linkVisit = "";
+    _object.hasOwnProperty("Visit") ? linkVisit = `<button type="button" class="btn btn-primary" onclick="window.open('${_object.Visit}')">Visit</button>` : linkVisit = "";
     // Check if properties are zero
     _object.Address != 0 ? add = `${_object.Address}<br>` : add = "";
     _object.ZipCode != 0 ? zip = `${_object.ZipCode}` : zip = "";
