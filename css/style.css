@@ -1,11 +1,10 @@
 /* Developed by Kaye Poblete */
-
 :root {
     --color-primary:#2C6E49;
     --color-secondary: #FFC9B9;
     --color-tertiary: #8C4E02;
     --color-light: #F6E7CB;
-    --color-dark: #000000;
+    --color-dark: #DBA401;
 
     --color-first: #301A48; /*Purple*/
     --color-second: #F2D6C6; /*Beige*/
@@ -14,8 +13,22 @@
     --color-fifth: #33566C; /*Blue*/
 }
 
+html {
+    position: relative;
+    min-height: 100%;
+    padding-bottom: 70px;
+}
+
 body {
+    margin-bottom: 160px;
     background-color: #F2D6C6 !important;
+}
+
+footer {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    height: 160px;
 }
 
 nav {
@@ -26,16 +39,16 @@ nav {
 }
 
 .navbar-brand {
-    width: 175px;
-  }
+    width: 180px;
+}
   
-  .navbar-brand > img {
+.navbar-brand > img {
     width: 100%;
-  }
+}
 
 .navbar li a {
-    color: #C54506;
-    font-family: 'Josefin Sans', sans-serif;
+    color: #C54506 !important;
+    font-family: 'Josefin Sans', sans-serif !important;
     font-size: 1.5vw;
     margin-left: 15px;
     margin-right: 15px;
@@ -53,7 +66,7 @@ nav li:hover {
 }
 
 #video-container {
-    height: 100vh;
+    height: 92vh;
     width: auto;
     position: relative;
 }
@@ -66,87 +79,275 @@ nav li:hover {
     z-index: 0;
 }
 
-#video-container p {
-    position: absolute;
-    z-index: 1;
-    font-size: 50px;
-    color: white;
-    width:100%;
-    text-align:center
+#video-container .overlay {
+    position: absolute; 
+    bottom: 0;
+    color: white; 
+    width: 100%;
+    font-family: 'Josefin Sans', sans-serif;
+    font-size: 2rem;
+    padding: 30px;
+    text-align: left;
+}
 
-  }
+#video-container .overlay p {
+    font-size: 3rem;
+    font-family: Roboto Slab, serif;
+    color: #D48B00;
+    margin: 0;
+}
 
 h1 {
-    margin: 2rem 0 1rem 0 !important;
-    color: #301A48 !important;
+    margin: 2rem 0 1rem 0;
+    color: #301A48;
     text-align: center;
     font-family: Roboto Slab, serif;
-    font-size: 5vw !important;
+    font-size: 4rem;
 }
 
 h2 {
-    color: #C54506 !important;
+    color: #C54506;
     text-align: center;
     font-family: 'Josefin Sans', sans-serif;
+    font-size: 2rem;
+}
+
+.para-box {
+    background-color: #BC6D6D;
+    color: #F2D6C6;
+    font-family: 'Josefin Sans', sans-serif;
+    font-size: 1.5rem;
+    box-shadow: 10px 10px 20px -5px #301A48;
+    padding: 2rem;
+}
+
+#divIndexImages {
+    display: flex;
+    justify-content: center;
+}
+
+#divIndexImages img {
+    width: 100%;
+    height: 400px;
+    object-fit: cover;
+    border: 5px solid #C54506;
+    box-shadow: 10px 10px 20px -5px #301A48;
+    margin-bottom: 2rem;
 }
 
 #btnViewAll {
     background: none;
     border: 2px solid;
-    font: inherit;
     line-height: 0.5;
-    margin: 0.5em;
+    margin: 1rem 0 -30px 0;
     padding: 0.5em 1.5em;
-    color: var(--color-primary);
+    font-size: 1.15rem;
+    font-family: 'Josefin Sans', sans-serif;
+    color: #2C6E49;
     background-color: #F2D6C6;
 }
 
 #btnViewAll:hover {
-    color: white;
+    color: #F2D6C6;
     background-color: #2C6E49;
 }
 
 .flex-end {
     display: flex;
-    justify-content: flex-end;
+    justify-content: center;
 }
-
 
 form {
     width: 50%;
+    padding: 2rem;
     margin: 0 auto 25px;
+    font-family: 'Josefin Sans', sans-serif;
 }
 
-form select {
-    margin-bottom: 5px;
+form label {
+    font-size: 1.5rem;
 }
 
+#formParks {
+    background-color: #BC6D6D;
+}
+
+#formMountains {
+    background-color: #BC6D6D;
+}
+
+.form-control {
+    margin-bottom: 1.5rem;
+    background-color: #F2D6C6 !important;
+}
+
+.form-control:focus {
+    border-color: #33566C;
+    box-shadow: 0 0 0 0.2rem #D48B00;
+}
 
 .img-fluid{
     max-width: 100%;
     height: auto;
 }
 
-.card {
-    width: 50%;
+#displayParksInfo .card, #displayMountainInfo .card {
+    display: flex;
+    width: 60%;
+    height: 100%;
     margin: 0 auto 25px;
+    color: #301A48;
+    font-size: 1.25rem;
+    font-family: 'Josefin Sans', sans-serif;
+    background-color: #D48B00;
+    border-color: #301A48;
+    border-width: 2px;
+}
+
+#displayParksInfo h5, #displayMountainInfo h5 {
+    font-family: Roboto Slab, serif;
+    font-size: 1.5rem;
+    font-weight: bold;
+}
+
+#displayParksInfo button {
+    color: #F2D6C6;
+    border-color: #33566C;
+    background-color: #33566C;
+    margin-top: 1rem;
+}
+
+#displayMountainInfo .card img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.card .card-body p {
+    margin: 0;
 }
 
 #iconScroll {
     font-size: 3rem;
-    color: #33566C;
+    color: #C54506;
 }
 
-#btnScrollToTop {
+.btnScrollToTop {
     position: fixed;
     bottom: 20px;
     right: 20px;
     display: none;
 }
 
+footer {
+    background-color: #301A48;
+}
+
+#divFooter {
+    padding-top: 10px;
+}
+
+#footerImage {
+    display: flex;
+    justify-content: center;
+}
+
+#footerImage > img {
+    width: 50%;
+    padding-top: 1rem;
+}
+
+#socialLinks {
+    align-self: center;
+    text-align: center;
+    font-size: 1.5rem;
+    font-family: 'Josefin Sans', sans-serif;
+}
+
+#socialLinks a {
+    color: #DBA401;
+}
+
+#footerBy {
+    color: #DBA401;
+    font-family: Roboto Slab, serif;
+    text-align: center;
+    background-color: #301A48;
+    font-size: 1rem;
+    padding: auto;
+}
+
 @media screen and (max-width:768px) {
+    html {
+        position: relative;
+        min-height: 100%;
+        padding-bottom: 20px;
+    }
+    
+    body {
+        margin-bottom: 160px;
+        background-color: #F2D6C6 !important;
+    }
+    
     .navbar li a {
         font-size: 5vw;
+    }
+
+    #video-container .overlay {
+        position: absolute; 
+        bottom: 0;
+        color: white; 
+        width: 100%;
+        font-family: 'Josefin Sans', sans-serif;
+        font-size: 1rem;
+        padding: 30px;
+        text-align: left;
+    }
+
+    #video-container .overlay p {
+        font-size: 2rem;
+        font-family: Roboto Slab, serif;
+        color: #D48B00;
+        margin: 0;
+    }
+
+    h1 {
+        margin: 1rem 0 0.5rem 0;
+        color: #301A48;
+        text-align: center;
+        font-family: Roboto Slab, serif;
+        font-size: 2rem;
+    }
+    
+    h2 {
+        color: #C54506;
+        text-align: center;
+        font-family: 'Josefin Sans', sans-serif;
+        font-size: 1rem;
+    }
+
+    .para-box {
+        background-color: #BC6D6D;
+        color: #F2D6C6;
+        font-family: 'Josefin Sans', sans-serif;
+        font-size: 0.75rem;
+        box-shadow: 10px 10px 20px -5px #301A48;
+    }
+
+    .indexImages {
+        margin-bottom: 1rem;
+    }
+
+    #btnViewAll {
+        background: none;
+        border: 2px solid;
+        line-height: 0.5;
+        margin: 1rem 0 -30px 0;
+        padding: 0.5em 1.5em;
+        font-size: 1rem;
+        font-family: 'Josefin Sans', sans-serif;
+        color: #2C6E49;
+        background-color: #F2D6C6;
     }
 
     form {
@@ -154,8 +355,38 @@ form select {
         margin: 0 auto 25px;
     }
 
+    form label {
+        font-size: 1rem;
+    }
+
     .card{
         width: 75%;
         margin: 0 auto 25px;
+    }
+
+    #divFooter {
+        padding-top: 1rem;
+    }
+
+    #footerImage > img {
+        width: 50%;
+    }
+
+    #socialLinks {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+        font-size: 0.5rem;
+        font-family: 'Josefin Sans', sans-serif;
+    }
+
+    #footerBy {
+        color: #DBA401;
+        font-family: Roboto Slab, serif;
+        text-align: center;
+        background-color: #301A48;
+        font-size: 0.5rem;
+        padding: auto;
     }
 }
