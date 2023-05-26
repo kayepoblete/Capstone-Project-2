@@ -1,16 +1,16 @@
 /* Developed by Kaye Poblete */
 :root {
-    --color-primary:#2C6E49;
-    --color-secondary: #FFC9B9;
-    --color-tertiary: #8C4E02;
-    --color-light: #F6E7CB;
-    --color-dark: #DBA401;
+    --color-green:#2C6E49;
+    --color-yellow: #DBA401;
+    --color-altyellow: #D48B00;
+    --color-purple: #301A48;
+    --color-light: #F2D6C6;
+    --color-pink: #BC6D6D;
+    --color-red: #C54506;
+    --color-blue: #33566C;
 
-    --color-first: #301A48; /*Purple*/
-    --color-second: #F2D6C6; /*Beige*/
-    --color-third: #BC6D6D; /*Pink*/
-    --color-fourth: #C54506; /*Red orange*/
-    --color-fifth: #33566C; /*Blue*/
+    --font-primary: "Roboto Slab", serif;
+    --font-secondary: 'Josefin Sans', sans-serif;
 }
 
 html {
@@ -21,7 +21,7 @@ html {
 
 body {
     margin-bottom: 160px;
-    background-color: #F2D6C6 !important;
+    background-color: var(--color-light) !important;
 }
 
 footer {
@@ -32,9 +32,9 @@ footer {
 }
 
 nav {
-    background-color: #F2D6C6;
+    background-color: var(--color-light);
     border-bottom: solid;
-    border-color: #301A48;
+    border-color: var(--color-purple);
     border-width: 1px;;
 }
 
@@ -47,22 +47,22 @@ nav {
 }
 
 .navbar li a {
-    color: #C54506 !important;
-    font-family: 'Josefin Sans', sans-serif !important;
+    color: var(--color-red) !important;
+    font-family: var(--font-secondary) !important;
     font-size: 1.5vw;
     margin-left: 15px;
     margin-right: 15px;
 }
 
 .navbar .active{
-    color: #301A48 !important;
+    color: var(--color-purple) !important;
     font-weight: bolder
 
 }
 
 nav li:hover {
     border-bottom: solid;
-    border-color: #301A48;
+    border-color: var(--color-purple);
 }
 
 #video-container {
@@ -84,7 +84,7 @@ nav li:hover {
     bottom: 0;
     color: white; 
     width: 100%;
-    font-family: 'Josefin Sans', sans-serif;
+    font-family: var(--font-secondary);
     font-size: 2rem;
     padding: 30px;
     text-align: left;
@@ -92,32 +92,32 @@ nav li:hover {
 
 #video-container .overlay p {
     font-size: 3rem;
-    font-family: Roboto Slab, serif;
-    color: #D48B00;
+    font-family: var(--font-primary);
+    color: var(--color-altyellow);
     margin: 0;
 }
 
 h1 {
     margin: 2rem 0 1rem 0;
-    color: #301A48;
+    color: var(--color-purple);
     text-align: center;
-    font-family: Roboto Slab, serif;
+    font-family: var(--font-primary);
     font-size: 4rem;
 }
 
 h2 {
-    color: #C54506;
+    color: var(--color-red);
     text-align: center;
-    font-family: 'Josefin Sans', sans-serif;
+    font-family: var(--font-secondary);
     font-size: 2rem;
 }
 
 .para-box {
-    background-color: #BC6D6D;
-    color: #F2D6C6;
-    font-family: 'Josefin Sans', sans-serif;
+    background-color: var(--color-pink);
+    color: var(--color-light);
+    font-family: var(--font-secondary);
     font-size: 1.5rem;
-    box-shadow: 10px 10px 20px -5px #301A48;
+    box-shadow: 10px 10px 20px -5px var(--color-purple);
     padding: 2rem;
 }
 
@@ -130,8 +130,8 @@ h2 {
     width: 100%;
     height: 400px;
     object-fit: cover;
-    border: 5px solid #C54506;
-    box-shadow: 10px 10px 20px -5px #301A48;
+    border: 5px solid var(--color-red);
+    box-shadow: 10px 10px 20px -5px var(--color-purple);
     margin-bottom: 2rem;
 }
 
@@ -142,14 +142,14 @@ h2 {
     margin: 1rem 0 -30px 0;
     padding: 0.5em 1.5em;
     font-size: 1.15rem;
-    font-family: 'Josefin Sans', sans-serif;
-    color: #2C6E49;
-    background-color: #F2D6C6;
+    font-family: var(--font-secondary);
+    color: var(--color-green);
+    background-color: var(--color-light);
 }
 
 #btnViewAll:hover {
-    color: #F2D6C6;
-    background-color: #2C6E49;
+    color: var(--color-light);
+    background-color: var(--color-green);
 }
 
 .flex-end {
@@ -161,7 +161,7 @@ form {
     width: 50%;
     padding: 2rem;
     margin: 0 auto 25px;
-    font-family: 'Josefin Sans', sans-serif;
+    font-family: var(--font-secondary);
 }
 
 form label {
@@ -169,21 +169,21 @@ form label {
 }
 
 #formParks {
-    background-color: #BC6D6D;
+    background-color: var(--color-pink);
 }
 
 #formMountains {
-    background-color: #BC6D6D;
+    background-color: var(--color-pink);
 }
 
 .form-control {
     margin-bottom: 1.5rem;
-    background-color: #F2D6C6 !important;
+    background-color: var(--color-light) !important;
 }
 
 .form-control:focus {
-    border-color: #33566C;
-    box-shadow: 0 0 0 0.2rem #D48B00;
+    border-color: var(--color-blue);
+    box-shadow: 0 0 0 0.2rem var(--color-altyellow);
 }
 
 .img-fluid{
@@ -196,24 +196,24 @@ form label {
     width: 60%;
     height: 100%;
     margin: 0 auto 25px;
-    color: #301A48;
+    color: var(--color-purple);
     font-size: 1.25rem;
-    font-family: 'Josefin Sans', sans-serif;
-    background-color: #D48B00;
-    border-color: #301A48;
+    font-family: var(--font-secondary);
+    background-color: var(--color-altyellow);
+    border-color: var(--color-purple);
     border-width: 2px;
 }
 
 #displayParksInfo h5, #displayMountainInfo h5 {
-    font-family: Roboto Slab, serif;
+    font-family: var(--font-primary);
     font-size: 1.5rem;
     font-weight: bold;
 }
 
 #displayParksInfo button {
-    color: #F2D6C6;
-    border-color: #33566C;
-    background-color: #33566C;
+    color: var(--color-light);
+    border-color: var(--color-blue);
+    background-color: var(--color-blue);
     margin-top: 1rem;
 }
 
@@ -229,7 +229,7 @@ form label {
 
 #iconScroll {
     font-size: 3rem;
-    color: #C54506;
+    color: var(--color-red);
 }
 
 .btnScrollToTop {
@@ -240,7 +240,7 @@ form label {
 }
 
 footer {
-    background-color: #301A48;
+    background-color: var(--color-purple);
 }
 
 #divFooter {
@@ -261,18 +261,18 @@ footer {
     align-self: center;
     text-align: center;
     font-size: 1.5rem;
-    font-family: 'Josefin Sans', sans-serif;
+    font-family: var(--font-secondary);
 }
 
 #socialLinks a {
-    color: #DBA401;
+    color: var(--color-yellow);
 }
 
 #footerBy {
-    color: #DBA401;
-    font-family: Roboto Slab, serif;
+    color: var(--color-yellow);
+    font-family: var(--font-primary);
     text-align: center;
-    background-color: #301A48;
+    background-color: var(--color-purple);
     font-size: 1rem;
     padding: auto;
 }
@@ -286,7 +286,7 @@ footer {
     
     body {
         margin-bottom: 160px;
-        background-color: #F2D6C6 !important;
+        background-color: var(--color-light) !important;
     }
     
     .navbar li a {
@@ -298,7 +298,7 @@ footer {
         bottom: 0;
         color: white; 
         width: 100%;
-        font-family: 'Josefin Sans', sans-serif;
+        font-family: var(--font-secondary);
         font-size: 1rem;
         padding: 30px;
         text-align: left;
@@ -306,32 +306,32 @@ footer {
 
     #video-container .overlay p {
         font-size: 2rem;
-        font-family: Roboto Slab, serif;
-        color: #D48B00;
+        font-family: var(--font-primary);
+        color: var(--color-altyellow);
         margin: 0;
     }
 
     h1 {
         margin: 1rem 0 0.5rem 0;
-        color: #301A48;
+        color: var(--color-purple);
         text-align: center;
-        font-family: Roboto Slab, serif;
+        font-family: var(--font-primary);
         font-size: 2rem;
     }
     
     h2 {
-        color: #C54506;
+        color: var(--color-red);
         text-align: center;
-        font-family: 'Josefin Sans', sans-serif;
+        font-family: var(--font-secondary);
         font-size: 1rem;
     }
 
     .para-box {
-        background-color: #BC6D6D;
-        color: #F2D6C6;
-        font-family: 'Josefin Sans', sans-serif;
+        background-color: var(--color-pink);
+        color: var(--color-light);
+        font-family: var(--font-secondary);
         font-size: 0.75rem;
-        box-shadow: 10px 10px 20px -5px #301A48;
+        box-shadow: 10px 10px 20px -5px var(--color-purple);
     }
 
     .indexImages {
@@ -345,9 +345,9 @@ footer {
         margin: 1rem 0 -30px 0;
         padding: 0.5em 1.5em;
         font-size: 1rem;
-        font-family: 'Josefin Sans', sans-serif;
-        color: #2C6E49;
-        background-color: #F2D6C6;
+        font-family: var(--font-secondary);
+        color: var(--color-green);
+        background-color: var(--color-light);
     }
 
     form {
@@ -378,14 +378,14 @@ footer {
         align-items: center;
         text-align: center;
         font-size: 0.5rem;
-        font-family: 'Josefin Sans', sans-serif;
+        font-family: var(--font-secondary);
     }
 
     #footerBy {
-        color: #DBA401;
-        font-family: Roboto Slab, serif;
+        color: var(--color-yellow);
+        font-family: var(--font-primary);
         text-align: center;
-        background-color: #301A48;
+        background-color: var(--color-purple);
         font-size: 0.5rem;
         padding: auto;
     }

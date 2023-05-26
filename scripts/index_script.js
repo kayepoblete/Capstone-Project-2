@@ -1,6 +1,4 @@
 // Developed by Kaye Poblete
-// import { scrollFunction } from "./park_script"
-
 "use strict";
 
 const btnScrollToTop = document.querySelector(".btnScrollToTop");
